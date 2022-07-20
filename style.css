@@ -40,13 +40,14 @@ h1.blog-taitel {
 }
 
 .container-bloges {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 274px;
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    /* column-gap: 274px; */
     background-color: black;
     border-radius: 40px;
     justify-items: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .button {
@@ -67,8 +68,8 @@ h1.blog-taitel {
 
 /*--------------------- header area end----------------*/
 .sideber-player-area-container {
-    display: grid;
-    grid-template-columns: 453px 1254px;
+    display: flex;
+    flex-direction: row;
     box-sizing: border-box;
     margin-top: 150px;
 }
@@ -196,4 +197,53 @@ footer {
 
 .match-img h1 {
     padding: 0px 20px;
+}
+
+
+
+/*
+responsive design
+*/
+
+
+
+/* for tablet device*/
+@media only screen and (max-width: 1150px) {
+
+    .container-bloges {
+        flex-direction: column;
+    }
+
+    .sideber-player-area-container {
+        flex-direction: column;
+    }
+
+    .sideber-back-part {
+        width: 100%;
+    }
+
+    .player-area {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin: 0 auto;
+    }
+}
+
+/* for mobile device*/
+@media only screen and (max-width: 576px) {
+    .sideber-player-area-container {
+        flex-direction: column;
+    }
+
+    .sideber-back-part {
+        width: 100%;
+    }
+
+    .player-area {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 32px;
+        margin: 0 auto;
+    }
 }
